@@ -1,0 +1,102 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Roboto", serif;
+}
+body {
+    background-image: url(pexels-ricardo-olvera-225422504-28860862.jpg);
+    background-size: cover;
+    background-position: center;
+}
+nav {
+    width: 100vw;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 40px;
+    background-color: rgba(0, 0, 0, 0.7);
+}
+.logo {
+    background-color: aquamarine;
+    padding: 10px;
+    border-radius: 4px;
+}
+.bar-menu {
+    cursor: pointer;
+    flex-direction: column;
+    display: none;
+}
+.bar-menu div {
+    width: 25px;
+    height: 3px;
+    background-color: aquamarine;
+    margin: 5px 0;
+    transition: 0.4s;
+}
+ul {
+    display: flex;
+}
+ul li:not(:last-child) {
+    margin-right: 20px;
+}
+ul li, ul li a {
+    text-decoration: none;
+    list-style: none;
+    color: aquamarine;
+}
+ul li a{
+    padding-bottom: 20px;
+    transition: all 0.2s;
+}
+ul li a:hover {
+    border-bottom: 2px solid #ffffff;
+}
+footer {
+    color: #fff;
+    position: absolute;
+    bottom: 0;
+    width: 100vw;
+    text-align: center;
+    background-color: rgba(0, 0, 0, 0.5);
+    margin-bottom: 10px;
+    padding: 10px;
+}
+
+@media screen and (max-width: 768px) {
+    nav ul {
+        flex-direction: column;
+        width: 100%;
+        position: absolute;
+        top: 70px;
+        left: -100%;
+        transition: 0.5s;
+        background-color: rgba(0, 0, 0, 0.5);
+        padding: 10px 0;
+    }
+    nav ul.show {
+        left: 0;
+    }
+    nav ul li {
+        padding: 10px 0;
+        text-align: center;
+    }
+    ul li a:hover {
+        border-bottom: 0px;
+    }
+    .bar-menu {
+        display: flex;
+    }
+    .bar-menu.open .bar-1 {
+        transform: rotate(-45deg) translate(-8px, 12px);
+        width: 30px;
+    }
+    .bar-menu.open .bar-2 {
+        opacity: 0;
+    }
+    .bar-menu.open .bar-3 {
+        transform: rotate(45deg) translate(-8px, -8px);
+        width: 30px;
+    }
+}
